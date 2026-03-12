@@ -1,0 +1,128 @@
+.task-item {
+  background-color: white;
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.task-item:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-item.completed {
+  background-color: #f9f9f9;
+  opacity: 0.7;
+}
+
+.task-item.editing {
+  background-color: #f0f7ff;
+  border-color: #007bff;
+  padding: 20px;
+}
+
+.task-content {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+  min-width: 0;
+}
+
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 15px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.task-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-description {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  color: #666;
+  word-break: break-word;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 15px;
+  flex-shrink: 0;
+}
+
+/* Edit Form Styles */
+.task-edit-form {
+  width: 100%;
+}
+
+.edit-input,
+.edit-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+
+.edit-input:focus,
+.edit-textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.edit-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.edit-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-buttons button {
+  flex: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-actions {
+    width: 100%;
+    margin-left: 35px;
+    margin-top: 10px;
+  }
+
+  .task-actions button {
+    flex: 1;
+  }
+}
